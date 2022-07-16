@@ -64,9 +64,6 @@ const generateHTMLBlocker = () => {
         // insert blocker file
 }
 
-function showTimeTracker() { 
-    document.getElementById("popup_container").style.display = "block";
-}
 
 switch (window.location.hostname) {
     case "www.youtube.com":
