@@ -1,33 +1,114 @@
 <!DOCTYPE html>
-<html>
-  <head> 
+<html lang="vi">
+
+<head>
     <link rel="stylesheet" href="./assets/icons/css/all.css">
     <style>
-        .main{
+        html{
+            padding:0;
+            margin: 0;
+        }
+        .main {
             width: 320px;
+            font-style: Montserrat, serif;
             background-color: #f6f8f6;
         }
-        .brands{
-            width:280px;
+        
+        .brands {
+            width: 280px;
             width: 100%;
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
         }
-        .brand-icons{
+        
+        .brand-icons {
             width: 33.333%;
             margin: 15px;
-            font-size:18px;
+            font-size: 18px;
+        }
+        a{
+            text-decoration: None;
+        }
+        .btn {
+            width: 60px;
+            font-weight: bold;
+            border:none;
+            padding: 10px;
+            background-color: #78c0cb;
+            color: white;
+            border-radius: 15%;
+            cursor: pointer;
+            text-align: center;
+        }
+        .btn:hover{
+            background-color: #f490a0;
+        }
+        #stop-modal{
+            display: none;
+        }
+        .open{
+            display: block!important;
+        }
+        .close{
+            display: none!important;
+        }
+        .row{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .time-tracker{
+            line-height: 100%;
+            padding: 10px;
+        }
+        .noti-modal {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 340px;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+            align-items: center;
+            display: none;
+            justify-content: center;
+        }
+        
+        .modal-container {
+            position: relative;
+            background-color: white;
+            margin: 2rem 0.7rem 0;
+            padding: 10px;
+            font-size: 16px;
+            
+            animation: modalFadeIn ease 0.5s;
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="main">
-        <center>
-            <img src="./assets/logo/logo.png" alt="HappyTime logo">
+        <center class="header">
+            <a href="http://happytime.unaux.com/">
+                <img src="./assets/logo/logo.png" alt="HappyTime logo">
+            </a>
+            <button class="btn js-start-btn">Start</button>
         </center>
         <hr />
-        <p style="font-size:20px;">Current Blocked Sites:</p>
+        <p style="font-size:20px;">Current blocked sites:</p>
         <div class="brands">
             <div class="brand-icons" style="color: #000000">
                 <i class="fab fa-tiktok"></i> TikTok</div>
@@ -44,6 +125,28 @@
             <div class="brand-icons" style="color:#fed939;">
                 <i class="fab fa-snapchat-ghost"></i> Snapchat</div>
         </div>
+
+        <div id="stop-modal" class="js-stop-modal">
+            <hr>
+            <div class="row">
+                <div class="btn js-stop-btn">Stop</div>
+                <div class="time-tracker">
+                    Time left: xx:yy:zz</div>
+            </div> 
+            <div class="noti-modal js-noti">
+                <div class="modal-container">
+                    <div class="noti-desc">
+                        <p>Time is not over yet!</p>
+                        <p>Find the reasons why you won't give up at <a href="http://happytime.unaux.com/">HappyTime</a>!</p>
+                    </div>
+                    <button class="modal-close-btn btn js-modal-close">
+                        Close</button>
+                </div>
+            </div>
+        </div>
     </div>
-  </body>
+
+    <script src="popup.js"></script>
+</body>
+
 </html>
