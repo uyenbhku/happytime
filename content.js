@@ -1,7 +1,7 @@
 const generateHTMLBlocker = () => {
     return `
         <!DOCTYPE html>
-        <html lang="en">
+        <html lang="vi">
 
         <head>
             <meta charset="UTF-8">
@@ -46,10 +46,10 @@ const generateHTMLBlocker = () => {
             <div class="container">
                 <div class="content">
                     <center>
-                        <h1 style="color:#f490a0;"> SORRY YOU'RE BLOCKED : D </h1>
-                        <p class="desc">Enjoy your real life! : D</p>
-                        <p>Don't remember why you're blocked?</p>
-                        <p>Don't worry! <a href="http://happytime.unaux.com/" class="link-web" style="text-decoration: None; font-weight:bold; color:##fed939;" >HappyTime</a> will remind you!</p>
+                        <h1 style="color:#f490a0;"> TRANG WEB ĐÃ BỊ CHẶN </h1>
+                        <p class="desc">Hãy tận hưởng cuộc sống của bạn đi nào :D</p>
+                        <p>Bạn còn nhớ hay đã quên lý do bạn chặn trang web này?</p>
+                        <p>Đừng lo! <a href="http://happytime.unaux.com/" class="link-web" style="text-decoration: None; font-weight:bold; color:##fed939;" >HappyTime</a> sẽ nhắc nhở bạn!</p>
                     
                     </center>
                 </div>
@@ -79,5 +79,5 @@ switch (window.location.hostname) {
         document.body.innerHTML = generateHTMLBlocker();
         break;
     default:
-        alert("Enjoy your time. However, be aware of your time!");
+        alert("Enjoy your time. However, be aware!");
 }
